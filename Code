@@ -1,0 +1,51 @@
+MENU = {"tandoori chicken", "truffle cake", " vegan burger"}
+
+def get_order():
+
+    current_order = []
+
+    while True:
+
+        print("What can I get for you?")
+
+        order = input()
+
+        if order in MENU:
+
+            current_order.append(order)
+
+        else:
+
+            print("I'm sorry, we don't serve that.")
+
+            continue
+
+        if is_order_complete():
+
+            return current_order
+
+def is_order_complete():
+
+    print("Anything else? yes/no")
+
+    choice = input()
+
+    if choice == "no":
+
+        return True
+
+    elif choice == "yes":
+
+        return False
+
+    else:
+
+        raise Exception("invalid input")
+
+def main():
+
+    order = get_order()
+
+if __name__ == "__main__":
+
+    main()
